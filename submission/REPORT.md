@@ -2,10 +2,13 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
-- Repository URL:
-- Commit SHA cuối:
+- Tên nhóm: C5-2
+- Repository URL: https://github.com/gianghh0928-ctrl/K4-Day13-2A202601470
+- Commit SHA cuối: e1d841db499e1b58976c3940ea037f5d1ac3107e
 - Thành viên và vai trò:
+   * Hoàng Hương Giang - 2A202601470 Nhóm trưởng
+   * Nguyễn Ngọc Lan - 2A2026 - Thành viên
+   * Nguyễn Hoàng Duy - 2A2026 - Thành viên
 
 ## 2. Kết quả kỹ thuật
 
