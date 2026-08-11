@@ -1,0 +1,94 @@
+{
+  "challenge_id": "day13-k4-observability-v1",
+  "cohort": "K4",
+  "incident_released": "rag_slow",
+  "affected_feature": "monitoring",
+  "latency_threshold_ms": 2000,
+  "source": "GET /dashboard_data (tính từ data/logs.jsonl) và GET /metrics (in-process counters)",
+  "note": "Ba snapshot cùng một tiến trình API. /metrics và /dashboard_data là cộng dồn, nên các con số per-window nằm ở mục windows bên dưới.",
+
+  "snapshot_1_healthy_baseline": {
+    "when": "sau python scripts/load_test.py (10 sample query, rag_slow=false)",
+    "traffic": 10,
+    "latency_p50": 150.0,
+    "latency_p95": 151.0,
+    "latency_p99": 151.0,
+    "total_cost_usd": 0.0192,
+    "tokens_in_total": 330,
+    "tokens_out_total": 1211,
+    "error_breakdown": {},
+    "error_rate_pct": 0.0,
+    "quality_avg": 0.88
+  },
+
+  "snapshot_2_during_incident": {
+    "when": "sau python scripts/inject_incident.py + load_test.py --challenge --concurrency 5",
+    "traffic": 15,
+    "latency_p50": 151.0,
+    "latency_p95": 2652.0,
+    "latency_p99": 2652.0,
+    "total_cost_usd": 0.0285,
+    "tokens_in_total": 505,
+    "tokens_out_total": 1802,
+    "error_breakdown": {},
+    "error_rate_pct": 0.0,
+    "quality_avg": 0.8667,
+    "slo_status": {
+      "latency_p95_ms_lte_3000": "VI PHAM nguong challenge 2000ms (2652ms), chua vuot SLO dashboard 3000ms",
+      "error_rate_pct_lte_2": "OK (0.0%)",
+      "total_cost_usd_lte_2.5": "OK (0.0285)",
+      "quality_score_mean_gte_0.75": "OK (0.8667)"
+    }
+  },
+
+  "snapshot_3_after_fix": {
+    "when": "sau inject_incident.py --disable + chạy lại đúng 5 input chính thức",
+    "traffic": 20,
+    "latency_p50": 150.0,
+    "latency_p95": 2652.0,
+    "latency_p99": 2652.0,
+    "total_cost_usd": 0.0385,
+    "tokens_in_total": 680,
+    "tokens_out_total": 2432,
+    "error_breakdown": {},
+    "error_rate_pct": 0.0,
+    "quality_avg": 0.86,
+    "note": "p95/p99 cộng dồn vẫn giữ 2652ms vì cửa sổ 60 phút còn chứa 5 request lỗi thời của incident. Số liệu per-window ở dưới mới là bằng chứng đã fix."
+  },
+
+  "windows": {
+    "healthy_baseline_10_sample_queries": {
+      "latency_ms_values": [151, 150, 151, 150, 150, 150, 150, 151, 150, 150],
+      "latency_ms_min": 150,
+      "latency_ms_max": 151,
+      "quality_scores": [0.9, 0.8, 0.8, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9]
+    },
+    "challenge_5_official_queries_rag_slow_enabled": {
+      "latency_ms_values": [2651, 2651, 2652, 2651, 2652],
+      "latency_ms_min": 2651,
+      "latency_ms_max": 2652,
+      "tokens_out_values": [160, 92, 82, 150, 107],
+      "quality_scores": [0.9, 0.9, 0.8, 0.8, 0.8],
+      "error_count": 0,
+      "client_observed_wall_clock_ms": [7983.8, 13296.8, 13299.8, 13298.7, 13300.2]
+    },
+    "challenge_5_official_queries_rag_slow_disabled": {
+      "latency_ms_values": [150, 150, 150, 151, 150],
+      "latency_ms_min": 150,
+      "latency_ms_max": 151,
+      "tokens_out_values": [84, 122, 158, 179, 87],
+      "quality_scores": [0.8, 0.8, 0.8, 0.9, 0.9],
+      "error_count": 0,
+      "client_observed_wall_clock_ms": [635.6, 791.0, 797.9, 794.1, 795.3]
+    }
+  },
+
+  "differential_diagnosis": {
+    "latency_ms": "150-151 -> 2651-2652 (+~2500ms, tăng 17.6 lần) => TRIỆU CHỨNG",
+    "tokens_out": "khoảng 82-179 ở cả hai cửa sổ => LLM sinh cùng lượng token, không phải nguyên nhân",
+    "cost_usd": "từ 0.001335 tới 0.002793 ở cả hai cửa sổ => không có cost spike",
+    "quality_score": "0.8-0.9 ở cả hai cửa sổ => prompt và retrieval vẫn trả đúng doc, không phải sự cố chất lượng",
+    "error_rate_pct": "0.0 ở cả hai cửa sổ => không phải tool_fail, request vẫn trả HTTP 200",
+    "conclusion": "Chỉ latency đổi trong khi token/cost/quality/error đều không đổi => thời gian phát sinh nằm ở một bước không sinh token, tức bước retrieval, chứ không nằm ở LLM generation."
+  }
+}

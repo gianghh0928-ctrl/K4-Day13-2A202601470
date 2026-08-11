@@ -65,9 +65,11 @@ class LabAgent:
                 "prompt_source": prompt.source,
                 "prompt_fetch_error": prompt.fetch_error,
             },
+            # Langfuse chỉ nhận "input"/"output" làm token vào/ra; các key khác bị coi là custom
+            # nên trace hiện "0 prompt -> 0 completion" dù total vẫn đúng.
             usage_details={
-                "prompt_tokens": response.usage.input_tokens,
-                "completion_tokens": response.usage.output_tokens,
+                "input": response.usage.input_tokens,
+                "output": response.usage.output_tokens,
             },
             cost_details={"total": cost_usd},
             prompt=prompt.managed_prompt,

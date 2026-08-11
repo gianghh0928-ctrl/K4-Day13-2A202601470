@@ -1,0 +1,381 @@
+{
+  "challenge_id": "day13-k4-observability-v1",
+  "cohort": "K4",
+  "note": "Log lines thật lấy từ data/logs.jsonl. Cùng 5 input chính thức, chạy 2 lần: 1 lần khi incident bật, 1 lần sau khi tat incident.",
+  "incident_window_rag_slow_enabled": [
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "How should an engineer investigate tail latency?"
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s02",
+      "feature": "monitoring",
+      "correlation_id": "req-f5117691",
+      "user_id_hash": "cb22af258a5e",
+      "level": "info",
+      "ts": "2026-08-11T09:44:54.670260Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 2651,
+      "tokens_in": 34,
+      "tokens_out": 160,
+      "cost_usd": 0.002502,
+      "quality_score": 0.9,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s02",
+      "feature": "monitoring",
+      "correlation_id": "req-f5117691",
+      "user_id_hash": "cb22af258a5e",
+      "level": "info",
+      "ts": "2026-08-11T09:44:57.323940Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Which signal should be checked after latency increases?"
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s04",
+      "feature": "monitoring",
+      "correlation_id": "req-1a418320",
+      "user_id_hash": "6b83e74c0874",
+      "level": "info",
+      "ts": "2026-08-11T09:44:57.328153Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 2651,
+      "tokens_in": 36,
+      "tokens_out": 92,
+      "cost_usd": 0.001488,
+      "quality_score": 0.9,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s04",
+      "feature": "monitoring",
+      "correlation_id": "req-1a418320",
+      "user_id_hash": "6b83e74c0874",
+      "level": "info",
+      "ts": "2026-08-11T09:44:59.982580Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Summarize the observability workflow for an AI API."
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s03",
+      "feature": "monitoring",
+      "correlation_id": "req-367f21d9",
+      "user_id_hash": "cbc3dffc63cf",
+      "level": "info",
+      "ts": "2026-08-11T09:44:59.984629Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 2652,
+      "tokens_in": 35,
+      "tokens_out": 82,
+      "cost_usd": 0.001335,
+      "quality_score": 0.8,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s03",
+      "feature": "monitoring",
+      "correlation_id": "req-367f21d9",
+      "user_id_hash": "cbc3dffc63cf",
+      "level": "info",
+      "ts": "2026-08-11T09:45:02.641557Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Explain why metrics traces and logs work together."
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s01",
+      "feature": "monitoring",
+      "correlation_id": "req-4c3cc2c4",
+      "user_id_hash": "f00ba60b3772",
+      "level": "info",
+      "ts": "2026-08-11T09:45:02.643577Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 2651,
+      "tokens_in": 35,
+      "tokens_out": 150,
+      "cost_usd": 0.002355,
+      "quality_score": 0.8,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s01",
+      "feature": "monitoring",
+      "correlation_id": "req-4c3cc2c4",
+      "user_id_hash": "f00ba60b3772",
+      "level": "info",
+      "ts": "2026-08-11T09:45:05.298540Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Describe how to prove a slow span is the root cause."
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s05",
+      "feature": "monitoring",
+      "correlation_id": "req-1cc3af3e",
+      "user_id_hash": "0c04335fe098",
+      "level": "info",
+      "ts": "2026-08-11T09:45:05.303029Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 2652,
+      "tokens_in": 35,
+      "tokens_out": 107,
+      "cost_usd": 0.00171,
+      "quality_score": 0.8,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s05",
+      "feature": "monitoring",
+      "correlation_id": "req-1cc3af3e",
+      "user_id_hash": "0c04335fe098",
+      "level": "info",
+      "ts": "2026-08-11T09:45:07.958227Z"
+    }
+  ],
+  "after_fix_window_rag_slow_disabled": [
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Explain why metrics traces and logs work together."
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s01",
+      "feature": "monitoring",
+      "correlation_id": "req-07ae748c",
+      "user_id_hash": "f00ba60b3772",
+      "level": "info",
+      "ts": "2026-08-11T09:47:20.860284Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 150,
+      "tokens_in": 35,
+      "tokens_out": 84,
+      "cost_usd": 0.001365,
+      "quality_score": 0.8,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s01",
+      "feature": "monitoring",
+      "correlation_id": "req-07ae748c",
+      "user_id_hash": "f00ba60b3772",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.015537Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Describe how to prove a slow span is the root cause."
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s05",
+      "feature": "monitoring",
+      "correlation_id": "req-f0a2b33d",
+      "user_id_hash": "0c04335fe098",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.018386Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 150,
+      "tokens_in": 35,
+      "tokens_out": 122,
+      "cost_usd": 0.001935,
+      "quality_score": 0.8,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s05",
+      "feature": "monitoring",
+      "correlation_id": "req-f0a2b33d",
+      "user_id_hash": "0c04335fe098",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.171005Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Summarize the observability workflow for an AI API."
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s03",
+      "feature": "monitoring",
+      "correlation_id": "req-7d86a5b6",
+      "user_id_hash": "cbc3dffc63cf",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.171005Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 150,
+      "tokens_in": 35,
+      "tokens_out": 158,
+      "cost_usd": 0.002475,
+      "quality_score": 0.8,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s03",
+      "feature": "monitoring",
+      "correlation_id": "req-7d86a5b6",
+      "user_id_hash": "cbc3dffc63cf",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.326588Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Which signal should be checked after latency increases?"
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s04",
+      "feature": "monitoring",
+      "correlation_id": "req-1d22ff7f",
+      "user_id_hash": "6b83e74c0874",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.330272Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 151,
+      "tokens_in": 36,
+      "tokens_out": 179,
+      "cost_usd": 0.002793,
+      "quality_score": 0.9,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s04",
+      "feature": "monitoring",
+      "correlation_id": "req-1d22ff7f",
+      "user_id_hash": "6b83e74c0874",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.485548Z"
+    },
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "How should an engineer investigate tail latency?"
+      },
+      "event": "request_received",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s02",
+      "feature": "monitoring",
+      "correlation_id": "req-ee488106",
+      "user_id_hash": "cb22af258a5e",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.486317Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 150,
+      "tokens_in": 34,
+      "tokens_out": 87,
+      "cost_usd": 0.001407,
+      "quality_score": 0.9,
+      "payload": {
+        "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+      },
+      "event": "response_sent",
+      "model": "claude-sonnet-4-5",
+      "env": "dev",
+      "session_id": "k4-challenge-s02",
+      "feature": "monitoring",
+      "correlation_id": "req-ee488106",
+      "user_id_hash": "cb22af258a5e",
+      "level": "info",
+      "ts": "2026-08-11T09:47:21.642041Z"
+    }
+  ],
+  "control_plane_events": [
+    {
+      "service": "control",
+      "payload": {
+        "name": "rag_slow"
+      },
+      "event": "incident_enabled",
+      "correlation_id": "req-85f9a6ee",
+      "level": "warning",
+      "ts": "2026-08-11T09:44:45.636132Z"
+    },
+    {
+      "service": "control",
+      "payload": {
+        "name": "rag_slow"
+      },
+      "event": "incident_disabled",
+      "correlation_id": "req-3c3ae3ff",
+      "level": "warning",
+      "ts": "2026-08-11T09:47:20.250425Z"
+    }
+  ]
+}
