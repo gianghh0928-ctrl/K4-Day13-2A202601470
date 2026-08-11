@@ -13,7 +13,7 @@ if str(REPO_ROOT) not in sys.path:
 from app.challenge import resolve_incident
 from app.cli import configure_utf8_stdio
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://127.0.0.1:8001"
 
 
 def main() -> None:
