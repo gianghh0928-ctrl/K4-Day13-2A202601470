@@ -9,17 +9,17 @@
 
 ## 2. Kết quả kỹ thuật
 
-- Điểm `validate_logs.py`:
-- Tổng số traces:
-- Số PII leak còn lại:
-- Link/đường dẫn dashboard:
+- Điểm `validate_logs.py`: 100/100 (Baseline: 30/100, Checkpoint 1: 100/100)
+- Tổng số traces: (Sẽ hoàn thiện ở Checkpoint 2)
+- Số PII leak còn lại: 0
+- Link/đường dẫn dashboard: `data/logs.jsonl`
 
 ## 3. Logging và tracing
 
-- Evidence correlation ID:
-- Evidence PII redaction:
-- Evidence trace waterfall:
-- Giải thích một span đáng chú ý:
+- Evidence correlation ID: `submission/evidence/sample_correlation_log.json` (Trace correlation ID xuyên suốt request_received và response_sent)
+- Evidence PII redaction: `submission/evidence/sample_pii_redacted_log.json` (Redact Email -> `[REDACTED_EMAIL]`, Phone -> `[REDACTED_PHONE_VN]`, CCCD -> `[REDACTED_CCCD]`, Credit Card -> `[REDACTED_CREDIT_CARD]`)
+- Evidence trace waterfall: (Sẽ hoàn thiện ở Checkpoint 2)
+- Giải thích một span đáng chú ý: (Sẽ hoàn thiện ở Checkpoint 2)
 
 ## 4. Prompt versioning
 

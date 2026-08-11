@@ -1,0 +1,37 @@
+[
+  {
+    "service": "api",
+    "event": "request_received",
+    "correlation_id": "req-2bb6b6e0",
+    "user_id_hash": "2055254ee30a",
+    "session_id": "s01",
+    "feature": "qa",
+    "model": "claude-sonnet-4-5",
+    "env": "dev",
+    "level": "info",
+    "ts": "2026-08-11T07:51:46.923894Z",
+    "payload": {
+      "message_preview": "What is your refund policy? My email is [REDACTED_EMAIL]"
+    }
+  },
+  {
+    "service": "api",
+    "event": "response_sent",
+    "correlation_id": "req-2bb6b6e0",
+    "user_id_hash": "2055254ee30a",
+    "session_id": "s01",
+    "feature": "qa",
+    "model": "claude-sonnet-4-5",
+    "env": "dev",
+    "level": "info",
+    "ts": "2026-08-11T07:51:48.073494Z",
+    "latency_ms": 1147,
+    "tokens_in": 36,
+    "tokens_out": 99,
+    "cost_usd": 0.001593,
+    "quality_score": 0.9,
+    "payload": {
+      "answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."
+    }
+  }
+]
