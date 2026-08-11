@@ -4,7 +4,7 @@
 
 - Tên nhóm: C5-2
 - Repository URL: https://github.com/gianghh0928-ctrl/Day13-K4-2A202601470
-- Commit SHA cuối: `<CẬP NHẬT SAU COMMIT CUỐI>`
+- Commit SHA cuối: `4b9f0c1693aadbde39ea69b68203227f751083a1`
 - Thành viên và vai trò:
   - Hoàng Hương Giang - 2A202601470 - Nhóm trưởng, vai trò Logging & PII
   - Nguyễn Ngọc Lan - 2A202601384 - Vai trò Tracing & Prompt Version + Dashboard/SLO
@@ -153,7 +153,7 @@ Với mỗi thành viên, ghi rõ nhiệm vụ và link commit/PR tương ứng.
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Hoàng Hương Giang | Nhóm trưởng. Checkpoint 0 + 1: correlation ID middleware, log enrichment metadata, PII redaction, evidence baseline                                                                                                                                   | `f8b95f3`, `e1d841d`, `d194906` | Log có cấu trúc, thứ tự processor phải scrub PII **trước** khi render JSON                                                                 |
 | Nguyễn Ngọc Lan   | Checkpoint 2: Langfuse tracing + prompt v1/v2 (label/rollback) trên `VinAI_DAY13`, dashboard 6 panel `/dashboard`, SLO & alert rules. Hai trace ID prompt version khai trong báo cáo bị gắn sai nhãn, đã xác nhận và được thay bằng trace mới ở mục 4 | `7135c02`                       | Tích hợp Langfuse tracing, prompt versioning và dashboard contract/validator; trace ID phải kiểm lại bằng API trước khi đưa vào báo cáo    |
-| Nguyễn Hoàng Duy  | Checkpoint 3 + hoàn tất: chạy challenge chính thức, điều tra Metrics→Traces→Logs, viết runbook `docs/alerts.md`, fix bug `/dashboard_data`, hoàn thiện REPORT mục 6                                                                                   | commit này (xem bảng dưới)      | Percentile vs average: sự cố này giữ P50 ở 151 ms nên chỉ P95/P99 mới lộ ra; và phân biệt latency server tự đo với latency người dùng thật |
+| Nguyễn Hoàng Duy  | Checkpoint 3 + hoàn tất: chạy challenge chính thức, điều tra Metrics→Traces→Logs, viết runbook `docs/alerts.md`, fix bug `/dashboard_data`, hoàn thiện REPORT mục 6                                                                                   | `4b9f0c1` (chi tiết bảng dưới)  | Percentile vs average: sự cố này giữ P50 ở 151 ms nên chỉ P95/P99 mới lộ ra; và phân biệt latency server tự đo với latency người dùng thật |
 
 ### Chi tiết phần việc của Nguyễn Hoàng Duy (vai trò Incident, Report & Demo)
 
